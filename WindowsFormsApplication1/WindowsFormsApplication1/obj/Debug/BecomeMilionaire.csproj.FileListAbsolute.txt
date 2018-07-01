@@ -1,0 +1,12 @@
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BecomeMilionaire.exe.config
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BecomeMilionaire.exe
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BecomeMilionaire.pdb
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BecomeMilionaire.csprojResolveAssemblyReference.cache
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BecomeMilionaire.MilionaireApp.resources
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BecomeMilionaire.Properties.Resources.resources
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BecomeMilionaire.csproj.GenerateResource.Cache
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BecomeMilionaire.exe
+C:\Users\Emi\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BecomeMilionaire.pdb
+C:\Users\Emi\git\Become_a_Milionaire\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BecomeMilionaire.exe.config
+C:\Users\Emi\git\Become_a_Milionaire\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BecomeMilionaire.exe
+C:\Users\Emi\git\Become_a_Milionaire\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BecomeMilionaire.pdb
