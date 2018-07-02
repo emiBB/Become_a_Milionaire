@@ -1,0 +1,162 @@
+      class Question:
+Class that holds a single question.
+Two private data fields:
+  string text: the question text;
+  LevelDifficulty difficulty: the level of difficulty of the qustion;
+Question(): default constructor; initializes the text as an empty string;
+Question(string question, LevelDifficulty ld): constructor with parameters;
+                                               initializes the private variables with the givven to the constructor parameters;
+string Text: get/set property for the text of the question;
+LevelDifficulty Difficulty: get/set property for the difficulty variable;
+      
+      class Answers:
+A class that holds a char buffer of the letters of the questions answers.
+Has two private data fields:
+  char[] correctAnswers - the buffer;
+  int numberAnswers - size of the buffer;
+Answers(int numAnswers): constructor with one parameter (the size of the char buffer);
+                         initializes the buffer and sets the his size;
+char[] CorrectAnswer: get/set property for the buffer;
+int NumberAnswers: set property for the buffer size;
+
+      enum LevelDifficulty:
+An enum with the posible levels of difficulty: EASY, MEDIUM and HARD;
+
+      class QuestionsWithLevelDifficulty:
+An abstract class.
+int QuestionsNumber: get property for the number of questions;
+void AddNewQuestion(int numQuestion, string text):
+  an abstract function that adds new question;
+  numQuestion: the number of the question;
+  text: the text of the question (question + possible answers);
+void OpenQuestionsFile():
+  an abstract function that opens the file from which the qustions for the current level of difficulty are read
+void SelectRandomQuestions():
+  an abstract function the selects random (without repeating) questions from the question file
+void GetQuestionsFromFile(int[] selectedQuestionsFromFile):
+  an abstract function that gets the selected qustions from the file
+  selectedQuestionsFromFile: array of integers that say the sequence numbers of the questions selsected from the file
+string GetQustionAtPosition(int pos, int numberOfQuestion):
+  an abstract function that gets a question with its possible answers at a givven position in the file
+  pos: tha position in the file (1st question, second question, third..)
+  numberOfQuestion: the number of the question (scense we are need 5 questiond this represents which of these five
+                                                                                                  is the selsected)
+void ReadQuestions(): calls the function that selects which questions will be in the game
+
+      class EasyQuestions:
+Public class the inherits from QuestionsWithLevelDifficulty.
+Has four private data fields:
+  Question[] eQuestions: array of type Question; holds the questions;
+  int numberQuestions: the size ot the question array;
+  string[] easyQuestionsFileContent: array of strings for the content of the easy_qusetions file
+  Answers easyQuestionsAnswers: variable of type Answers to keep the answers of the qustions
+EasyQuestions(): default constructor; initializes the private data;
+QuestionsNumber: get property for the size of the question array;
+EQuestions: get/set property for the array ot Questions;
+EasyQuestionsAnswers: get/set property for the answers of the questions;
+AddNewQuestion(int numQuestion, string text): overridden from the parent class;
+void OpenQuestionsFile(): overridden from the parent class;
+SelectRandomQuestions(): overridden from the parent class;
+GetQuestionsFromFile(int[] selectedQuestionsFromFile): overridden from the parent class;
+GetQustionAtPosition(int pos, int numberOfQuestion): overridden from the parent class;
+ReadQuestions(): overridden from the parent class;
+     
+     class MediumDifficultyQuestions:
+Public class the inherits from QuestionsWithLevelDifficulty.
+Has four private data fields:
+  Question[] mQuestions: array of type Question; holds the questions;
+  int numberQuestions: the size ot the question array;
+  string[] medQuestionsFileContent: array of strings for the content of the medium_qusetions file
+  Answers medQuestionsAnswers: variable of type Answers to keep the answers of the qustions
+MediumDifficultyQuestions(): default constructor; initializes the private data;
+QuestionsNumber: get property for the size of the question array;
+MQuestions: get/set property for the array ot Questions;
+MedQuestionsAnswers: get/set property for the answers of the questions;
+AddNewQuestion(int numQuestion, string text): overridden from the parent class;
+void OpenQuestionsFile(): overridden from the parent class;
+SelectRandomQuestions(): overridden from the parent class;
+GetQuestionsFromFile(int[] selectedQuestionsFromFile): overridden from the parent class;
+GetQustionAtPosition(int pos, int numberOfQuestion): overridden from the parent class;
+ReadQuestions(): overridden from the parent class;
+
+    class HardQuestions:
+Public class the inherits from QuestionsWithLevelDifficulty.
+Has four private data fields:
+  Question[] hQuestions: array of type Question; holds the questions;
+  int numberQuestions: the size ot the question array;
+  string[] hardQuestionsFileContent: array of strings for the content of the hard_qusetions file
+  Answers hardQuestionsAnswers: variable of type Answers to keep the answers of the qustions
+HardQuestions(): default constructor; initializes the private data;
+QuestionsNumber: get property for the size of the question array;
+HQuestions: get/set property for the array ot Questions;
+HardQuestionsAnswers: get/set property for the answers of the questions;
+AddNewQuestion(int numQuestion, string text): overridden from the parent class;
+void OpenQuestionsFile(): overridden from the parent class;
+SelectRandomQuestions(): overridden from the parent class;
+GetQuestionsFromFile(int[] selectedQuestionsFromFile): overridden from the parent class;
+GetQustionAtPosition(int pos, int numberOfQuestion): overridden from the parent class;
+ReadQuestions(): overridden from the parent class;
+
+    class QuestionsGame:
+Combines all previous classes.
+Has 8 private data fields:
+  EasyQuestions easyQuestions: instance of class EasyQuestions; contains the easy questions of the game;
+  MediumDifficultyQuestions medQuestions: instance of class MediumDifficultyQuestions;
+                                          contains the medium questions of the game;
+  HardQuestions hardQuestions: instance of class HardQuestions; contains the hard questions of the game;
+  Question[] allQuestions: array of instances of type Question; contains all questions;
+  Answers allAnswers: instance of type Answers; contains all questions answers (15);
+  int currentQuestionNumber: the question we are current on;
+  int wonMoney: variable that contains the money won;
+  int hintTax: variable that contains the money that clicking on the button Hint will take from the wonMoney variable;
+QuestionsGame(): default constructor; initializes the private data;
+Question[] AllQuestions: get/set property for the allQuestions private data field;
+Answers AllAnswers: get/set property for the allAnswers private data field;
+int CurrentQuestionNumber: get/set property for the currentQuestionNumber private data field;
+int WonMoney: get/set property for wonMoney private data field;
+int HintTax: get/set property for the hintTax private data field;
+SetPriceAccordingNumQuestion(int numQuestion):
+  sets the price (money) of a coorect answer according to the question number;
+  numQuestion: question number in the sequence of all questins;
+SetHintTaxAccordingNumQuestion(int numQuestion):
+  sets the hint tax acording to the question number;
+  numQuestion: question number in the sequence of all questins;
+AddQuestions(): adds the easy, medium and hard questions to the allQuestions private data field;
+AddAswers(): adds the answer of the easy, medium and hard questions to the allAnswers private data field;
+CheckIfWon(): boolean function that checks if all the questions are answered correctly;
+
+    class StartGame:
+Static class that contains the main function and starts the application;
+
+    class ButtonExtentions:
+Class the extends class Button. Inherits class Button.
+OnPaint(System.Windows.Forms.PaintEventArgs e):
+  Overrides the Button function OnPaint and makes special shape for the buttons;
+  
+    class MilionaireApp:
+Contains the disagn of the elements in the application;
+
+    class MilionaireApp:
+Inherits Form. Implements the actions of the elements of the application;
+Has two private data fields:
+  QuestionsGame game: instance of the QuestionGame class;
+  int hintCounter: variable that counts how many times the Hint button is used;
+MilionaireApp(): default constructor; initializes the app and the private data fields;
+richTxtScreen_TextChanged(object sender, EventArgs e): Gives the answer buttons color and puts the question on the
+                                                       richTxtScreen component;
+btnStart_Click(object sender, EventArgs e): adds the questions and the answers to the dame, displayes a start message
+                                            and calls the richTxtScreen_TextChanged for the first question;
+btnQuit_Click(object sender, EventArgs e): checks if the game is finished by success, incorrect answer or clicking the
+                                           Quit button and displayes the adequate message and exits the app;
+btnHint_Click(object sender, EventArgs e): Gives the correct answer and takes the adequate amount of money from the player;
+IfCorrectAnswer(object sender, EventArgs e): used by the answer buttons; Displayes message if the answer is right,
+                                             adds money to the wonMoney variable and changes the question;
+btnAnswerA_Click(object sender, EventArgs e): checks if the correct answer is A and eather calls IfCorrectAnswer, or
+                                              displayes a message and calls the btnQuit_Click;
+btnAnswerB_Click(object sender, EventArgs e): checks if the correct answer is B and eather calls IfCorrectAnswer, or
+                                              displayes a message and calls the btnQuit_Click;
+btnAnswerC_Click(object sender, EventArgs e): checks if the correct answer is C and eather calls IfCorrectAnswer, or
+                                              displayes a message and calls the btnQuit_Click;
+btnAnswerD_Click(object sender, EventArgs e): checks if the correct answer is D and eather calls IfCorrectAnswer, or
+                                              displayes a message and calls the btnQuit_Click;
+lblCurrentMoney_Click(object sender, EventArgs e): changet the text of the label to show the value of wonMoney variable;
